@@ -114,25 +114,26 @@
 
     // Kiểu Object: same same kiểu list và dict trong python
     var dct = {
-        "Trường Hoàng" : "Phệ",
-        "Khương Hoàng" : "Minh"
+        fullName : 'Hoàng Minh Khương',
+        age : 20,
+        address : 'Thái Bình'
     }
 
     for(let key in dct){
         console.log(key, dct[key]); 
     }
 
-    console.log(dct["Khương Hoàng"])
-    console.log(dct["Trường Hoàng"])
+    console.log(dct.fullName);
+    console.log(dct.age);
+    console.log(dct.address);
 
-    var arr = [5, 3, 8, 10]
+    var arr = [5, 3, 8, 10];
     for(let i in arr){
         console.log(arr[i])
     }
     for(var i = 0; i < arr.length; ++i){
-        console.log(arr[i])
+        console.log(arr[i]);
     }
 
-    
-    console.log(arr.join(' '))
-    console.log(arr.length)
+    console.log(arr.join(' '));
+    console.log(arr.length);
