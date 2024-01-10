@@ -129,7 +129,7 @@
 
     var arr = [5, 3, 8, 10];
     for(let i in arr){
-        console.log(arr[i])
+        console.log(arr[i]);
     }
     for(var i = 0; i < arr.length; ++i){
         console.log(arr[i]);
