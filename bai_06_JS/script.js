@@ -270,7 +270,4 @@ function nameStd(name){
     console.log(resultArray);
     // tương tự python, chỉ khác cú pháp
 
-
 })();
-
-
