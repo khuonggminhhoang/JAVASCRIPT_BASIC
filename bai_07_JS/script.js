@@ -173,7 +173,30 @@
         console.log(i);
     }
 
+    // var, let, const và khai báo biến
+    // var x = 2;
+    // if(true){
+    //     var tmp = 3.1;                              // var dùng khai báo biến toàn cục, dùng ở bất kì đâu trong file ctrinh
+    //     console.log(x);
+    // }
+    // console.log(tmp);
+
+    // let y = 3;
+    // if(true){
+    //     let y = 10;                                  // let chỉ có phạm vi trong khối khai báo {}.
+    //     console.log(y);
+    // }
+    // console.log(y);
+
+    // if(true){
+    //     const pii = 3.14;                               // Chỉ có phạm vi trong khối khai báo.
+    //                                                     // Là hằng số nên không thể gán lại giá trị.
+    //     console.log(pii);
+    // }
+
     
+
+
     
 
 
