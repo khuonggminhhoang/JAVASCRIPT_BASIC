@@ -122,14 +122,14 @@ var arrowFunction = (...args) => {
     return result;
 }
 
-const mang = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-console.log(declarationFunctionNoArgs(mang));
-console.log(declarationFunction(...mang));
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+console.log(declarationFunctionNoArgs(arr));
+console.log(declarationFunction(...arr));
 
-console.log(expressionFunctionNoArgs(mang));
-console.log(expressionFunction(...mang));
+console.log(expressionFunctionNoArgs(arr));
+console.log(expressionFunction(...arr));
 
-console.log(arrowFunction(...mang));
+console.log(arrowFunction(...arr));
 
 /*
 Ví dụ 2: Viết chương trình cho người dùng nhập vào số n lớn hơn 0, sau đó dựa vào n tính giá trị của
