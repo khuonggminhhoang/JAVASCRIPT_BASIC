@@ -137,3 +137,8 @@
 
     console.log(arr.join(' '));
     console.log(arr.length);
+
+    // ép kiểu str, boolean -> number
+    console.log(+ '12.23');             
+    console.log(+ true);
+    console.log(+ false);
