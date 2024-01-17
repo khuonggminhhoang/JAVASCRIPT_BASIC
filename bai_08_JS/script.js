@@ -72,14 +72,14 @@ arr.forEach((item) => console.log(item))
 // console.log(sum);
 
 
-// every(function(item, index, arrayOrigin){...code...}); => boolean   :  Kiểm tra tất cả các phần tử của một mảng phải thỏa mãn một điều kiện gì đó. 
+// every(function(item, index, arrayOrigin){...code...}); => false nếu 1 phần tử nào đó không thỏa đk nào đó  :  Kiểm tra tất cả các phần tử của một mảng phải thỏa mãn một điều kiện gì đó. 
 arr = [2, 4, 6, 8 , 10];
 let ans = arr.every((item) => {
     return item%2 == 0;
 }); 
 console.log('arr chẵn : ' + ans);
 
-// some(function(item, index, arrayOrigin){...code...}); => boolean   :   Kiểm tra chỉ cần một phần tử của một mảng thỏa mãn một điều kiện gì đó là được.
+// some(function(item, index, arrayOrigin){...code...}); => true nếu ít nhất 1 item tm đk gì đó   :   Kiểm tra chỉ cần một phần tử của một mảng thỏa mãn một điều kiện gì đó là được.
 ans = arr.some((item) => {
     return item % 3 == 0;
 });
