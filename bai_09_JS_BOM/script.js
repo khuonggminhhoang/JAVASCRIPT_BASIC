@@ -30,7 +30,7 @@ const openTab = () => {
 };
 
 //---------- window.close() --------------
-
+// nếu dùng window.close() sẽ đóng luôn cửa sổ hiện tại
 const closeTab = () => {
     tab.close();
 }
@@ -69,6 +69,7 @@ console.log(location);
  * port: lấy ra port của URL
  * search:  lấy ra phần query (string) của URL (sau dấu ?, trước dấu #)
  * href: toàn bộ link URL
+ * protocol : trả về protocol của location
  * 
  * http://127.0.0.1:5500/JavaScript%20Basic/bai_09_JS_BOM/index.html?search=text#123
  */
@@ -157,7 +158,84 @@ console.log('version:', navigator.appVersion);
     ● setTimeout(function, milliseconds);       Thực thi 1 lần sau milliseconds ms
     ● setInterval(function, milliseconds);      Thực thi sau mỗi milliseconds ms
 */
-window.setTimeout(()=> console.log('setTimeout nha'), 2000);
-const id = window.setInterval(() => console.log('setInterval nha'), 3000);
-window.setTimeout(() => window.clearInterval(id), 6000);
+// window.setTimeout(()=> console.log('setTimeout nha'), 2000);
+// const id = window.setInterval(() => console.log('setInterval nha'), 3000);
+// window.setTimeout(() => window.clearInterval(id), 6000);
 
+// ----------------- cookies --------------
+/*
+    Tạo cookie:
+        document.cookie = "name=value";
+*/
+document.cookie = 'fullName = Khương';
+document.cookie = 'age = 21';
+document.cookie = 'address = Hà Nội';
+console.log(document.cookie);
+document.cookie = 'fullName = Khương; expires = Thu, 01 Jan 2025 00:00:00 UTC';
+
+// bonus: class Date
+const date = new Date();
+console.log(date);
+console.log(date.getTime());    // return milliseconds các kiểu các kiểu đọc doc nhé
+console.log('năm',date.getFullYear()); // return năm nay
+console.log('tháng:',date.getMonth());
+date.setDate(21);
+console.log('ngày:',date.getDate());    // return ngày trong tháng
+console.log('thứ:',date.getDay());     // return thứ trong tuần (từ 0 -> 6)
+console.log('giờ:',date.getHours());
+console.log('phút:',date.getMinutes());
+console.log('giây:',date.getSeconds());
+console.log('ms:',date.getMilliseconds());
+
+// hàm set cookie tự build
+function setCookie(cname, cvalue, exday){
+    const date = new Date();
+    date.setTime(date.getTime() + exday * 24 * 60 * 60 * 1000);
+    exday = 'expires = ' + date.toUTCString();
+    document.cookie = cname + '=' + cvalue + ';' + exday;
+}
+
+setCookie('address', 'Hà Nội', 2);
+setCookie('id', '01234632', 30);
+
+/*
+    Lấy ra các giá trị cookie
+    var cookie = document.cookie;
+*/
+console.log(document.cookie);
+
+function getCookie(cname){
+    const arrCookie = document.cookie.trim().split('; ');
+    for(let cookie of arrCookie){
+        if(cookie.indexOf(cname) == 0){
+            return cookie.substring(cname.length + 1, cookie.length);
+        }
+    }
+    return '';
+}
+
+console.log(getCookie('fullName'));
+console.log(getCookie('age'));
+
+/*
+    Sửa cookie:
+    document.cookie = 'name=diffValue';
+*/
+document.cookie = 'fullName = Minh';
+console.log(document.cookie);
+
+/*
+    Xóa cookie: chỉ cần đưa thời gian expires về quá khứ là được
+    document.cookie = 'name=; expires = Thu, 01 Jan 1970 00:00:00 UTC';
+
+*/
+const cname = 'fullName'
+document.cookie = `${cname}=; expires = Thu, 01 Jan 1970 00:00:00 UTC`;
+
+function deleteCookie(cname){
+    document.cookie = `${cname} = ; expires = Thu, 01 Jan 1970 00:00:00 UTC`;
+}
+
+deleteCookie('age');
+deleteCookie('');
+console.log(document.cookie);
