@@ -84,7 +84,26 @@ const openPopup = () => {
 const closePopup = () => {
     tab.close();
 }
-window.close();
+// window.close();
 
 // 11.
-console.log(navigator.userAgentData);
+console.log(navigator.userAgent);
+
+// 12.
+console.log(navigator.language);
+
+// 13.
+console.log(screen.width);
+console.log(screen.height);
+
+// 14.
+const checkDevice = () => {
+    return navigator.userAgentData.mobile ? 'Mobile' : 'PC'
+};
+
+console.log(checkDevice());
+
+console.log('HDH:', navigator.userAgentData.platform);
+
+// 15.
+console.log(navigator.languages);
