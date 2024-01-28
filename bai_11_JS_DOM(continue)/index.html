@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://i.pinimg.com/originals/48/5c/81/485c811a692e5110e4b8bed7c42845ed.jpg">
+    <title>DOM</title>
+</head>
+<body>
+    <h1>Document Object Model</h1>
+    
+
+    <!-- <script >
+        // onload : sau khi phần tử load xong thì thực hiện hàm
+        // vì js là ngôn ngữ lập trình nên nó sẽ đọc chương trình từ trên xuống, do đó nên để thẻ script ở dưới cuối chương trình.
+        
+        window.onload = () => {
+            var tagAs = document.querySelectorAll('#menu li a');
+            console.log(tagAs);
+        }    
+
+    </script> -->
+    <style>
+        ul {
+            list-style: square;
+            color: red;
+        }
+
+        img[src='https://i.pinimg.com/originals/48/5c/81/485c811a692e5110e4b8bed7c42845ed.jpg'] {
+            transform: rotate(90deg);
+        }
+    </style>
+
+    <div>
+        <img src="https://i.pinimg.com/originals/48/5c/81/485c811a692e5110e4b8bed7c42845ed.jpg" alt="temp-img" width="100px">
+    </div>
+
+    <ul id="menu">
+        <li>
+            <a href="">Mục 1</a>
+        </li>
+
+        <li>
+            <a href="">Mục 2</a>
+        </li>
+
+        <li>
+            <a href="">Mục 3</a>
+        </li>
+    </ul>
+
+    <input type="text" id="input" data-user = 'user'>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -129,8 +129,7 @@ console.log(document.querySelector('h2[userChange="user-change"]').getAttribute(
             </script>
 */
 
-// document.querySelector('h2[userChange="user-change"]').setAttribute('class', 'title bgr-orange');       // đổi giá trị của thuộc tính class từ bgr-yellow sang bgr-orange
-
+document.querySelector('h2[userChange="user-change"]').setAttribute('class', 'title bgr-orange');       // đổi giá trị của thuộc tính class từ bgr-yellow sang bgr-orange
 // ghim quảng cáo sau 5s
 setTimeout(() => {
     // document.querySelector('#ads').setAttribute('class', 'ads ads-display');
