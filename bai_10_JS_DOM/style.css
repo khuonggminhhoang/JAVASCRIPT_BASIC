@@ -1,0 +1,39 @@
+.title {
+    color: brown;
+}
+
+body h2:nth-child(3){
+    background-color: aqua;
+}
+
+.bgr-yellow {
+    background-color: yellow;
+}
+
+.bgr-orange {
+    background-color: rgb(255, 165, 0);
+}
+
+h2{
+    background-color: chartreuse;
+}
+
+#menu-1 li a {
+    color: brown;
+}
+
+ul#menu-2 li:nth-child(3) {
+    background-color: aqua;
+}
+
+/* css cho ads */
+.ads {
+    position: fixed;
+    bottom: -45px;
+    right: 0;
+    display: none;
+}
+
+.ads-display{
+    display: block;
+}

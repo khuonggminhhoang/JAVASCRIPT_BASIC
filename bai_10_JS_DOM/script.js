@@ -122,12 +122,58 @@ console.log(document.querySelector('h2[userChange="user-change"]').getAttribute(
 /*
     ● Thay đổi giá trị của thuộc tính:
         ● Để thay đổi giá trị của thuộc tính HTML sử dụng setAttribute().
+        ● Ví dụ:
+            <h2 class="test">Nội dung hiện tại</h2>
+            <script language="javascript">
+                document.querySelector("h2").setAttribute("class", "Nội dung mới");
+            </script>
 */
 
-document.querySelector('h2[userChange="user-change"]').setAttribute('class', 'title bgr-orange');       // đổi giá trị của thuộc tính class từ bgr-yellow sang bgr-orange
+// document.querySelector('h2[userChange="user-change"]').setAttribute('class', 'title bgr-orange');       // đổi giá trị của thuộc tính class từ bgr-yellow sang bgr-orange
 
+// ghim quảng cáo sau 5s
 setTimeout(() => {
     // document.querySelector('#ads').setAttribute('class', 'ads ads-display');
     document.querySelector('#ads').classList.add('ads-display');                // tương tự setAttribute nhưng chỉ áp dụng cho class được thôi.
 }, 5000);
 // console.log( document.querySelector('#ads').classList);
+
+//------------------ DOM CSS --------------------
+/*
+● Cú pháp thiết lập giá trị:
+    document.getElementById("idName").style.propertyName = "value";
+
+● Cú pháp lấy giá trị:
+    document.getElementById("idName").style.propertyName;
+
+    !note: lưu ý, method này chỉ lấy được giá trị của property trên thẻ style được css inline trên element thôi 
+
+    window.getComputedStyle([element]).propertyName
+
+● Lưu ý:
+    ● propertyname: Tên thuộc tính viết theo kiểu camelCase.
+    ● Ví dụ:
+        ● font-size → fontSize
+        ● margin-bottom → marginBottom
+*/
+
+
+document.querySelector('h2[userchange="user-change"]').innerHTML = 'effect tại đây sẽ bị thay đổi dựa vào DOM CSS';
+console.log(document.querySelector('h2[userchange="user-change"]').style.backgroundColor);
+var element = document.querySelector('h2[userchange="user-change"]');
+console.log(element.style.backgroundColor); // sẽ không in ra giá trị nào vì style css không đươc viết theo kiểu inline, tức là ko được css trực tiếp trên thẻ
+
+console.log(document.querySelector('h2[userchange="user-change"]'));
+
+// lấy ra giá trị thuộc tính trong css
+// c1: dùng getPropertyValue('tên property css')
+var background  = window.getComputedStyle(document.querySelector('h2[userchange="user-change"]')).getPropertyValue('background-color');
+console.log(background);
+// c2
+console.log(window.getComputedStyle(document.querySelector('h2[userchange="user-change"]')).backgroundColor);
+
+// set giá trị thuộc tính css:
+// c1:
+// document.querySelector('h2[userchange="user-change"]').style.backgroundColor = 'gray';
+// c2:
+document.querySelector('h2[userchange="user-change"]').style.setProperty('background-color', 'gray');
