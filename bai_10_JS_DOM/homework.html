@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../shopping_2.png">
+    <title>Homework</title>
+</head>
+<body>
+    <p>Doing homework...</p>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+        .notification {
+            background-color: #66b347;
+            display: block;
+            position: fixed; 
+            top: 0;
+            right: 0; 
+            padding: 10px 20px;
+            border-radius: 8px;
+            /* opacity: 0.5;  làm mờ phần tử, chỉ số từ 0 -> 1 */
+        }
+    </style>
+
+    <div id="notification" class="notification">
+        Thông báo:
+        <a href="#">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO3cyaZLf5Q40xDqEExqe4VejfXvnFdqShHA&usqp=CAU" alt="Ảnh thông báo" width="100%">
+        </a>
+    </div>
+
+    <div id="element">
+        Nội dung hiện tại
+    </div>
+      
+    <h2 class="title">Tiêu đề 1</h2>
+    <h2 class="title">Tiêu đề 2</h2>
+    <h2 class="title">Tiêu đề 3</h2>
+    <h2 class="title">Tiêu đề 4</h2>
+
+
+    <h2 class="title-2">Tiêu đề 5</h2>
+    <h2 class="title-2">Tiêu đề 6</h2>
+
+
+    <style>
+        button[type='submit']{
+            background-color: #000;
+            color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100px;
+            height: 30px;
+            display: block;
+            margin: 20px auto;
+        }
+
+        button[type='submit']:hover {
+            box-shadow: 2px 2px 5px red;
+        }
+    </style>
+    <button type="submit">Click me</button>
+
+    <script src="hmk.js"></script>
+</body>
+</html>
