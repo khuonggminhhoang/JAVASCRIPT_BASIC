@@ -1,0 +1,44 @@
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f5f6f7;
+}
+
+.header {
+    text-align: center;
+    text-transform: uppercase;
+    padding: 32px;
+    background-color: #0a0a23;
+    color: #fff;
+    border-bottom: 4px solid #fdb347;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: row;        /* điều chình main axis (row, row-reverse, column, column-reverse)*/
+    flex-wrap: wrap;            /* xác định cách các phần tử con của một container Flexbox sẽ được xếp trên nhiều dòng khi chúng không còn đủ không gian để xếp trên cùng một dòng */
+    justify-content: space-between;    /* điều chỉnh cách các phần tử con được căn chỉnh theo chiều ngang bên trong một phần tử cha khi sử dụng Flexbox*/
+    align-items: center;        /* điều chỉnh cách các phần tử con được căn chỉnh theo chiều dọc bên trong một phần tử cha khi sử dụng Flexbox */
+    gap: 16px;                  /* điều chỉnh khoảng cách giữa các flex item*/
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 10px;
+}
+
+.gallery img {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    object-fit: cover;          /* điều chỉnh ảnh */
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px 3px black;
+}
+
+.gallery::after {
+    content: "";
+    width: 350px;               /*tạo phần tử con cuối cùng*/
+}
