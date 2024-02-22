@@ -1,3 +1,5 @@
+import { lowerString, upperString } from "./test.js";
+
 /*
 Given an integer array arr and a mapping function fn, return a new array with a 
 transformation applied to each element.
@@ -195,3 +197,6 @@ console.log(fn(4));
  * const fn = compose([x => x + 1, x => 2 * x])
  * fn(4) // 9
  */
+
+console.log(upperString('hoang minh khuong'));
+console.log(lowerString('HOANG MINH KHUONg'));
