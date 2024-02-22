@@ -30,7 +30,7 @@ var elementInput = document.querySelector('#input');
 elementInput.onblur = (event) => {
     console.log(event);
     elementInput.value = elementInput.value.toUpperCase();     
-    elementInput.style.backgroundColor = '#fff';               // dùng .value sẽ trả về giá trị của value thực tế khi người dùng nhập, khác với .getAttribute('value) trả về giá trị mặc định của giá trị attr value ban đầu
+    elementInput.style.backgroundColor = '#fff';               // dùng .value sẽ trả về giá trị của value thực tế khi người dùng nhập, khác với .getAttribute('value') trả về giá trị mặc định của giá trị attr value ban đầu
 }
 
 // var elementInput = document.querySelector('#input');
@@ -59,3 +59,21 @@ elementInput.onkeyup = (event) => {
     // alert(event.key);
     console.log(event.key);
 }
+
+// const user = {
+//     johnDoe: { 
+//       age: 34,
+//       email: 'johnDoe@freeCodeCamp.com'
+//     }
+// };
+
+console.log(user);
+// const { johnDoe } = user
+// console.log(johnDoe); 
+
+// const {johnDoe : pp} = user
+// console.log(pp);
+
+
+// const {johnDoe : {email, age}} = user
+// console.log(email, age);
