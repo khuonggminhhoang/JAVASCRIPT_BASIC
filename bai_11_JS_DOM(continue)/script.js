@@ -60,20 +60,20 @@ elementInput.onkeyup = (event) => {
     console.log(event.key);
 }
 
-// const user = {
-//     johnDoe: { 
-//       age: 34,
-//       email: 'johnDoe@freeCodeCamp.com'
-//     }
-// };
+// onclick : kích hoạt khi một element được click vào 
 
-console.log(user);
-// const { johnDoe } = user
-// console.log(johnDoe); 
+const adsClose = document.querySelector('#close-ads');
+const ads = document.querySelector('#ads');
+ads.onclick = (event) => {
+    ads.setAttribute('class', 'd-none');
+}
 
-// const {johnDoe : pp} = user
-// console.log(pp);
+setTimeout(() => ads.setAttribute('class', 'd-none'), 3000);
 
+// onchange: kích hoạt khi giá trị được thay đổi so với giá trị trước đó
+const selectColor = document.querySelector('#color');
+selectColor.onchange = (event) => {
+    console.log(event.target.value);
+}
 
-// const {johnDoe : {email, age}} = user
-// console.log(email, age);
+// ------------------ DOM Events Listener -----------------

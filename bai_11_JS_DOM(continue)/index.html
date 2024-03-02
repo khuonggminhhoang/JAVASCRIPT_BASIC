@@ -51,6 +51,39 @@
 
     <input type="text" id="input" data-user = 'user'>
 
+    <div id="ads">
+        <button id="close-ads">X</button>
+        <a href="#">
+            <img src="https://i.pinimg.com/originals/48/5c/81/485c811a692e5110e4b8bed7c42845ed.jpg" alt="ảnh nha" width="200" height="200">
+        </a>
+    </div>
+
+    <style>
+        #ads {
+            position: fixed;
+            top: 0;
+            right:0 ;
+        }
+
+        img[src='https://i.pinimg.com/originals/48/5c/81/485c811a692e5110e4b8bed7c42845ed.jpg'] {
+            transform: rotate(0deg);
+        }
+
+        .d-none {
+            display: none;
+        }
+    </style>
+
+    <div id="list-color">
+        <p>Your color favorite:
+            <select name="color" id="color">
+                <option value="white">White</option>
+                <option value="yellow">Yellow</option>
+                <option value="black">Black</option>
+            </select>
+        </p>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
