@@ -91,21 +91,66 @@
 // export {lowerString, upperString};
 
 
-function Dog(name) {
-    this.name = name;
-}
+// function Dog(name) {
+//     this.name = name;
+// }
   
-function Bird(name){
-    this.name = name;
+// function Bird(name){
+//     this.name = name;
+// }
+
+// Bird.prototype.age = 7;
+
+
+// let duck = new Bird('Gau');
+// console.log(duck.age);
+// let dog = new Dog('Mew');
+
+// console.log(duck.constructor == Bird)
+// console.log(duck instanceof Bird);
+
+function MakeMultiFilter (originalArray) {
+    let currentArray = [...originalArray];
+    function arrayFilter(filterCriteria, callback1 = null){
+        if(typeof filterCriteria === 'function') {
+            currentArray = currentArray.filter(filterCriteria);
+        }
+        else return currentArray;
+        if(typeof callback1 === 'function') {
+            callback1.call(originalArray, currentArray);
+        }
+        else return arrayFilter;
+    }
+    return arrayFilter;
 }
 
-Bird.prototype.age = 7;
+// function MakeMultiFilter(originalArray) {
+//     let currentArray = originalArray.slice();
+//     function arrayFilterer(filterCriteria, callback) {
+//       if (typeof filterCriteria === 'function') {
+//         currentArray = currentArray.filter(filterCriteria);
+//       } else if (typeof filterCriteria !== 'undefined') {
+//         return currentArray;
+//       }
+//       if (typeof callback === 'function') {
+//         callback.call(originalArray, currentArray);
+//       }
+//       return arrayFilterer;
+//     }
+//     return arrayFilterer;
+// }
 
+// Invoking MakeMultiFilter() with originalArray = [1, 2, 3] returns a
+// function, saved in the variable arrayFilterer1, that can be used to
+// repeatedly filter the input array
+var arrayFilterer1 = MakeMultiFilter([1, 2, 3]);
+// Call arrayFilterer1 (with a callback function) to filter out all the numbers
+// not equal to 2.
+arrayFilterer1(function (elem) {
+    return elem !== 2; // check if element is not equal to 2
+}, function (currentArray) {
 
-let duck = new Bird('Gau');
-console.log(duck.age);
-let dog = new Dog('Mew');
-
-console.log(duck.constructor == Bird)
-console.log(duck instanceof Bird);
-
+// 'this' within the callback function should refer to originalArray whichis [1, 2, 3]
+    console.log(this); // prints [1, 2, 3]
+    console.log(currentArray); // prints [1, 3]
+});

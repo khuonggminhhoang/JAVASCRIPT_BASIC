@@ -62,7 +62,7 @@
         #ads {
             position: fixed;
             top: 0;
-            right:0 ;
+            right: 0;
         }
 
         img[src='https://i.pinimg.com/originals/48/5c/81/485c811a692e5110e4b8bed7c42845ed.jpg'] {
@@ -84,6 +84,45 @@
         </p>
     </div>
 
-    <script src="script.js"></script>
+    <div>
+        <button id="button">Click me</button>
+    </div>
+
+    <style>
+        .child:nth-child(2){
+            color: green;
+        }
+
+        .box:nth-child(3) {
+            color: purple;
+        }
+    </style>
+
+    <div class="perent-node">
+        <div class="child">Child1
+            <div class="box">box1</div>
+            <div class="box">box2</div>
+            <div class="box">box3</div>
+        </div>
+        <div class="child">Child2</div>
+        <div class="child">Child3</div>
+    </div>
+
+    <ul id="menu1">
+        <li>Item1</li>
+        <li>Item2</li>
+        <li>Item3</li>
+    </ul>
+
+    <button id="add" type="button">Add Item</button>
+
+    <ul id="menu2">
+        <li><input type="text" name="" id=""><button>X</button></li>
+        <li><input type="text" name="" id=""><button>X</button></li>
+        <li><input type="text" name="" id=""><button>X</button></li>
+    </ul>
+    <button id="add-inp">Add</button>
+
+    <script  src="script.js"></script>
 </body>
 </html>
