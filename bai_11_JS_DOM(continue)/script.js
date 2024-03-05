@@ -271,3 +271,19 @@ addInp.addEventListener("click", () => {
         menu2.removeChild(li);
     });
 });
+
+/*
+    ● Dùng để thay thế một node con bằng một node mới.
+    ● Cú pháp:
+        element_parent.replaceChild(node_insert, node_remove);
+
+    ● Trong đó:
+    ● element_parent: là phần tử cha.
+    ● node_insert: là node bạn muốn thay thế.
+    ● node_remove: là node cũ muốn bỏ đi.
+
+*/
+const liR = document.createElement("li");
+liR.innerHTML = 'New item';
+const liReplace = menu2.querySelector('li:nth-child(2)');
+console.log(menu2.replaceChild(liR, liReplace), 'hehe');
