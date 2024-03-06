@@ -1,0 +1,19 @@
+body {
+    box-sizing: border-box;
+}
+
+#to-do-list {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    user-select: none;
+}
+
+ul.list {
+    text-align: left;
+}
+
+.complete {
+    text-decoration: line-through;
+    cursor: pointer;
+}

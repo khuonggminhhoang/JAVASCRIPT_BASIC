@@ -1,0 +1,37 @@
+body {
+    box-sizing: border-box;
+}
+
+#html-editor {
+    display: block;
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 20px;
+    padding: 20px 10px;
+}
+
+#preview-button {
+    width: 100px;
+    height: 50px;
+    display: block;    
+    margin: 10px auto;
+    background-color: #20212B;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#preview-button:hover {
+    background-color: aquamarine;
+    color: #20212B;
+    cursor: pointer;
+}
+
+#preview {
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    border: #20212B solid 2px;
+    padding: 20px;
+    border-radius: 20px;
+}

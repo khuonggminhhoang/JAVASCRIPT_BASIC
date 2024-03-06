@@ -154,3 +154,20 @@ arrayFilterer1(function (elem) {
     console.log(this); // prints [1, 2, 3]
     console.log(currentArray); // prints [1, 3]
 });
+
+
+let soccerWord = "gooooooooal!";
+let gPhrase = "guot feeling";
+let oPhrase = "over the moon";
+let goRegex = /go*/gi;
+console.log(soccerWord.match(goRegex));
+console.log(gPhrase.match(goRegex));
+console.log(oPhrase.match(goRegex));
+
+// Only change code below this line
+let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh aaaa AAaa!";
+let chewieRegex = /Aa*/g; // Change this line
+// Only change code above this line
+
+let result = chewieQuote.match(chewieRegex);
+console.log(result);
