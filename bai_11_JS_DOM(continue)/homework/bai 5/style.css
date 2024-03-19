@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.tab{
+    position: relative;
+    top: 1rem;
+    left: 1rem;
+}
+
+.menu-item {
+    display: inline-block;
+    transition: 0.4s;
+    background-color: #F1F1F1;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-right: 0;
+}
+
+.content-tab{
+    display: none;
+    border-bottom: 2px solid #ddd;
+}
+
+.menu-item:hover,
+.menu-item.active{
+    background-color: #ddd;
+}
+
+.content-tab.active {
+    display: block;
+}
+

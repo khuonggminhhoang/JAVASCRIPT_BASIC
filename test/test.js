@@ -1,3 +1,4 @@
+/*
 // import { lowerString, upperString } from "script.js" 
 
 // // class Book {
@@ -156,18 +157,21 @@ arrayFilterer1(function (elem) {
 });
 
 
-let soccerWord = "gooooooooal!";
-let gPhrase = "guot feeling";
-let oPhrase = "over the moon";
-let goRegex = /go*/gi;
-console.log(soccerWord.match(goRegex));
-console.log(gPhrase.match(goRegex));
-console.log(oPhrase.match(goRegex));
 
-// Only change code below this line
-let chewieQuote = "Aaaaaaaaaaaaaaaarrrgh aaaa AAaa!";
-let chewieRegex = /Aa*/g; // Change this line
-// Only change code above this line
+*/
 
-let result = chewieQuote.match(chewieRegex);
-console.log(result);
+const date = new Date();
+console.log('Thu',date.getDay() + 1);
+console.log('thang', date.getMonth() + 1);
+console.log('ngay', date.getDate());
+console.log('năm',date.getFullYear());
+console.log(date.getTime());
+console.log(date.getDate());
+
+console.log(new Date(date.getFullYear(), date.getMonth(), -2).getDate());
+
+
+// const dateOfMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
+// const totalCell = dateOfMonth +  (new Date(date.getFullYear(), date.getMonth(), 1).getDay());
+// const totalRow = Math.ceil(totalCell/7);
+// console.log(totalRow);
