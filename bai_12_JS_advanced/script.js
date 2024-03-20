@@ -144,7 +144,7 @@ sayHello();
 
 // Ví dụ 1: JSON có giá trị là Object
 
-var objectJSON = `
+let objectJSON = `
     {
         "fullName": "Hoàng Minh Khương",
         "age": 21,
@@ -159,3 +159,61 @@ console.log(objectJS);
 
 objectJSON = JSON.stringify(objectJS);      // dùng JSON.stringify() để chuyền object js sang chuỗi json
 console.log(objectJSON);
+
+// Ví dụ 2: JSON có giá trị là number
+let numberJSON = `10`;
+
+let numberJS = JSON.parse(numberJSON);
+console.log(numberJS);
+
+console.log(JSON.stringify(numberJS));         // chuyển về dạng chuỗi 
+
+// Ví dụ 3: JSON có giá trị là string
+
+let stringJSON = `"khương"`;
+
+let stringJS = JSON.parse(stringJSON);
+
+console.log(stringJS);
+
+console.log(JSON.stringify(stringJS));
+
+
+// Ví dụ 4: JSON có giá trị là boolean
+
+let booleanJSON = `true`;
+
+let booleanJS = JSON.parse(booleanJSON);
+
+console.log(booleanJS);
+console.log(JSON.stringify(booleanJS));
+
+
+// Ví dụ 5: JSON có giá trị là array
+
+let arrayJSON = `[
+    {
+        "fullName": "Hoàng Minh Khương",
+        "age": 21,
+        "phone": "0123454789"
+    },
+    {
+        "fullName": "Hoàng Minh Trường",
+        "age": 13,
+        "phone": "0123454789"
+    }
+]`;
+
+let arrayJS = JSON.parse(arrayJSON);
+
+console.log(arrayJS);
+console.log(JSON.stringify(arrayJS));
+
+
+// Ví dụ 6: JSON có giá trị là null
+
+let nullJSON = `null`;
+
+let nullJS = JSON.parse(nullJSON);
+console.log(nullJS);
+console.log(JSON.stringify(nullJS));
