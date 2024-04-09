@@ -72,10 +72,10 @@ promise
 const promise = new Promise((resolve, reject) => {
     let x;
     if (x === undefined) {
-        reject('Lỗi nhé!');
+        reject('Lỗi nhé!');     // parameter ở đây sẽ truyền xuống cho đối số của catch
     }
-    else {
-        resolve(2 * x);
+    else {      
+        resolve(2 * x);         // parameter ở đây sẽ truyền xuống cho then đầu tiên
     }
 })
 
@@ -116,31 +116,129 @@ promise
         ● Kết quả là một object lỗi.
 */
 
-const promiseTest = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        resolve(10);
-        // reject('error'); 
-    }, 3000);
-})
+// const promiseTest = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve(10);
+//         // reject('error'); 
+//     }, 3000);
+// })
 
-setTimeout(() => {
-    console.log('Sau 1s:',promiseTest);
-}, 1000);
+// setTimeout(() => {
+//     console.log('Sau 1s:',promiseTest);
+// }, 1000);
 
-setTimeout(() => {
-    console.log('Sau 2s:',promiseTest);
-}, 2000);
+// setTimeout(() => {
+//     console.log('Sau 2s:',promiseTest);
+// }, 2000);
 
-setTimeout(() => {
-    console.log('Sau 3s:',promiseTest);
-}, 3000);
+// setTimeout(() => {
+//     console.log('Sau 3s:',promiseTest);
+// }, 3000);
 
 // --------------- Fetch API -------------
 
-fetch('https://dummyjson.com/products')
-    .then( response => response.json())
-    .then( data => {
-        const products = data.products;
+/*
+● Phương thức Fetch dùng để gọi lên trên server thông qua một API để lấy dữ liệu từ trên server trả về.
+● Api là một url để cho phép bên Front-end có thể giao tiếp được với bên Back-end.
+● Cú pháp:
+
+
+fetch('http://example.com/movies.json')
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+● Trong đó:
+● fetch() dùng để gửi yêu cầu lên server thông qua api.
+● then() được thực thi khi có phản hồi từ server trả về.
+● catch() được thực thi khi không có phản hồi từ máy chủ.
+
+*/
+
+// fetch('https://dummyjson.com/products')
+//     .then( response => response.json())
+//     .then( data => {
+//         const products = data.products;
+
+//         const productList = document.querySelector('.product-list');
+//         const nameProducts = products.map((item) => item.title);
+//         const thumbnailProducts = products.map((item) => item.thumbnail);
+
+//         const itemsDraw = nameProducts.map((name, index) => {
+//             return `
+//             <div class='product-item'>
+//                 <img src=${thumbnailProducts[index]} width="200px"/>
+//                 <h2>
+//                     ${name}
+//                 </h2>
+//             </div>
+//             `
+//         }) 
+//         const html = itemsDraw.join('');
+//         productList.innerHTML = html;
+//     });
+
+// ------- Async Await ---------
+
+/*
+● Async/Await là một tính năng của JavaScript giúp chúng ta làm việc với các hàm bất đồng bộ theo
+cách dễ hiểu hơn.
+● Nó được xây dựng trên Promise.
+● Async: Khai báo một hàm bất đồng bộ.
+    ● Tự động biến đổi một hàm thông thường thành một Promise.
+    ● Từ khóa Async được đặt trước 1 hàm.
+● Await: Tạm dừng việc thực hiện các hàm async.
+    ● Khi được đặt trước một Promise, nó sẽ đợi cho đến khi Promise kết thúc và trả về kết quả.
+    ● Await chỉ có thể được sử dụng bên trong các hàm async.
+*/
+const api1 = 'https://dummyjson.com/products';
+const api = 'http://localhost:3000/product';
+const fetchAPI = async (api) => {            // hoặc async function fetchAPI(api){}
+    const response = await fetch(api);        // vì fetch() là hàm promise nên dùng await để chờ 
+    const data = await response.json()        // vì json() là hàm promise nên dùng await để chờ 
+    return data;
+}
+
+fetchAPI(api1)
+    .then(data => console.log(data.products));
+
+fetchAPI('http://localhost:3000/product')
+    .then(data => console.log(data));
+
+// ----- JSON server --------
+/*
+● Khái niệm: Json server là một server để fake API và trả chuỗi JSON.
+● Yêu cầu: Cài đặt nodejs vào máy tính, gõ npm -v để xem phiên bản.
+● Hướng dẫn cấu hình:
+    ● Bước 1: Gõ lệnh npm init để khởi tạo file package.json.
+    ● Bước 2: Gõ lệnh npm i json-server để cài.
+    ● Bước 3: Tạo 1 file database.json.
+    ● Bước 4: Thêm vào mục script trong package.json dòng lệnh: "start": "json-server --watch
+    database.json".
+    ● Bước 5: Gõ lệnh npm start để chạy.
+
+*/
+
+// -------- Postman --------
+/*
+    Dùng để test API (GET, POST, PUT, PATCH, DELETE)
+    GET: Để lấy một hoặc nhiều bản ghi
+    POST: Để tạo mới một bản ghi (Trường hợp data gửi lên dạng json thì headers phải thêm Content-Type là application/json).
+    PUT: Để cập nhật một bản ghi (Gửi lên đầy đủ các cặp key value kể cả ko cần cập nhật).
+    PATCH: Để cập nhật một bản ghi (Chỉ cần gửi lên các cặp key-value cần cập nhật).
+    DELETE: Để xóa một bản ghi.
+*/
+
+
+fetchAPI('http://localhost:3000/product/')
+    .then(data => {
+        const products = [].concat(data);
 
         const productList = document.querySelector('.product-list');
         const nameProducts = products.map((item) => item.title);

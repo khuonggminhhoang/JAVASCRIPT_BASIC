@@ -1,0 +1,34 @@
+* {
+    box-sizing: border-box;
+}
+
+
+.countries {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.countries .country {
+    width: 20%;
+    margin-bottom: 20px;
+}
+
+.countries .country .inner-item {
+    margin-left: 5px;
+    margin-right: 5px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    height: 100%;   
+}
+
+.countries .country .inner-item .inner-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+}
+
+.countries .country .inner-item .inner-title{
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+}
