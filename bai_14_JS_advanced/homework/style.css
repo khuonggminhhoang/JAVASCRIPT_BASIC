@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+#to-do-list {
+    margin: 0 auto;
+    width: 225px;
+    user-select: none;
+}
+
+
+.complete {
+    text-decoration: line-through;
+    cursor: pointer;
+}
+
+#list{
+    padding-left: 0px;
+}
+
+#list li {
+    margin-top: 5px ;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+#to-do-list h1 {
+    text-align: center;
+}
