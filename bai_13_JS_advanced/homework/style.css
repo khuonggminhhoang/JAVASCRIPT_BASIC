@@ -24,7 +24,7 @@
 .countries .country .inner-item .inner-image {
     width: 100%;
     aspect-ratio: 4/3;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .countries .country .inner-item .inner-title{
